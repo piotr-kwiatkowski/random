@@ -3,16 +3,24 @@
 
 typedef struct sampleStruct
 {
-  uint8_t val;
+  uint16_t val;
   
-  sampleStruct(uint8_t a_val);
+  sampleStruct();
+  sampleStruct(uint16_t a_val);
   struct sampleStruct* prev;
   struct sampleStruct* next;
 } Struct;
 
-Struct::sampleStruct(uint8_t a_val)
+Struct::sampleStruct()
+{
+  val = null;
+  std::cout << "value not assigned\n";
+}
+
+Struct::sampleStruct(uint16_t a_val)
 {
   val = a_val;
+  std::cout << "value assigned\n";
 }
 
 int main()
